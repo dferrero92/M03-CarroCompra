@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Electronica extends Producto{
 
-    public static void addProductElectronica(List<Electronica>listaElectronicos,List<Alimentacion>listaAlimentos,List<Textil>listaTextil){
+    public static void addProductElectronica(List<Electronica>listaElectronicos,List<Alimentacion>listaAlimentos,List<Textil>listaTextiles){
 
         Scanner scanner = new Scanner(System.in);
         Electronica electronico = new Electronica();
@@ -52,7 +52,7 @@ public class Electronica extends Producto{
 
         imprimirListaElectronicos(listaElectronicos);
         getLista_Electronica(listaElectronicos);
-        Menu.menuPrincipal(listaElectronicos,listaAlimentos,listaTextil);
+        Menu.menuPrincipal(listaElectronicos,listaAlimentos,listaTextiles);
 
         }
     public static List<Electronica> getLista_Electronica(List<Electronica> listaElectronicos){

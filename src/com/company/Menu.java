@@ -7,7 +7,7 @@ public class Menu {
 
 static final String SUPERMERCAT_NAME="MERCALOMOS";
 
-    public static void menuPrincipal(List<Electronica> listaElectronicos, List<Alimentacion>listaAlimentos, List<Textil>listaTextil) {
+    public static void menuPrincipal(List<Electronica> listaElectronicos, List<Alimentacion>listaAlimentos, List<Textil>listaTextiles) {
         Scanner sc = new Scanner(System.in);
         int opcio=0;
 
@@ -20,9 +20,9 @@ static final String SUPERMERCAT_NAME="MERCALOMOS";
 
         switch(opcio){
 
-            case 1:Producto.añdirProducto(listaElectronicos,listaAlimentos,listaTextil);
+            case 1:Producto.añdirProducto(listaElectronicos,listaAlimentos,listaTextiles);
                 break;
-            case 2:Carrito.mostrarCarro(listaElectronicos,listaAlimentos,listaTextil);
+            case 2:Carrito.mostrarCarro(listaElectronicos,listaAlimentos,listaTextiles);
                 break;
         }
 
