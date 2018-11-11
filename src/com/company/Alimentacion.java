@@ -96,7 +96,7 @@ public class Alimentacion extends Producto {
     }
 
 
-      // Método Para tener la lista de Alimentos Pasada y poder usarla en otros metodos. (creo xD)
+      // Método Para tener la lista de Alimentos Pasada y poder usarla en otros  metodos. (creo xD)
 
     public static List<Alimentacion> getLista_Alimentos(List<Alimentacion> AlimentosLista){
 
