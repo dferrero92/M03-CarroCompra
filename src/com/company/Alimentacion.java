@@ -1,23 +1,17 @@
 package com.company;
 
 import java.security.MessageDigest;
+import java.time.Duration;
+import java.time.LocalDate;
 import java.util.*;
 
 public class Alimentacion extends Producto {
 
-
-    Calendar fecha = Calendar.getInstance();
-    String dataCaducitat;
-
-    final int AÑO = fecha.get(Calendar.YEAR);
-    final int MES = fecha.get(Calendar.MONTH+1);
-    final int DIA = fecha.get(Calendar.DAY_OF_MONTH);
-
+    public static  Calendar fecha = Calendar.getInstance();
+    public static String dataCaducitat;
 
 
     public static void addProductAlimencion(List<Electronica>listaElectronicos,List<Alimentacion>listaAlimentos,List<Textil>listaTextil){
-
-
 
         Scanner scanner = new Scanner(System.in);
 
@@ -113,7 +107,12 @@ public class Alimentacion extends Producto {
 
         }
 
-    }
+
+
+
+        }
+
+
 
 
 
@@ -123,5 +122,14 @@ public class Alimentacion extends Producto {
 
     public void setDataCaducitat(String dataCaducitat) {
         this.dataCaducitat = dataCaducitat;
+    }
+
+    public static void pruebahora(){
+
+        fecha.set(2001,0,1);
+        LocalDate fechaahora = LocalDate.now();
+
+        System.out.println(fechaahora);
+
     }
 }

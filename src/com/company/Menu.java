@@ -24,6 +24,7 @@ static final String SUPERMERCAT_NAME="MERCALOMOS";
                 break;
             case 2:Carrito.mostrarCarro(listaElectronicos,listaAlimentos,listaTextiles);
                 break;
+            case 3:Alimentacion.pruebahora();
         }
 
     }

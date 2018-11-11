@@ -15,6 +15,7 @@ public class Carrito {
         double precioTotalTextil=0;
         int productoTotal=0;
 
+
         System.out.println("--------Carro de la compra-----------");
 
         System.out.println("CANTIDAD  PRODUCTO    PRECIO");
@@ -94,7 +95,7 @@ public class Carrito {
         } else {
 
             for (int i = 0; i < listaTextiles.size(); i++) {
-                System.out.println(cantidad + "    X      " + listaTextiles.get(i).nombre + "      " + listaTextiles.get(i).precio);
+                System.out.println(cantidad + "    X      " + listaTextiles.get(i).nombre + "       " + listaTextiles.get(i).precio);
                 precioTotalTextiles = precioTotalTextiles + listaTextiles.get(i).precio;
             }
         }
