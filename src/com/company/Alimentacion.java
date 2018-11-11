@@ -106,13 +106,13 @@ public class Alimentacion extends Producto {
     public static void imprimirListaAlimentos(List<Alimentacion> listaAlimentos){
 
         System.out.println("Lista Actual de Alimentos: ");
-        System.out.println("**********************************************");
+        System.out.println("***********************************************");
         for (int i = 0; i < listaAlimentos.size() ; i++) {
             System.out.println( "Nombre: " + listaAlimentos.get(i).getNombre()
                     +"\n"+"Código de Barras: " + listaAlimentos.get(i).getCodigoBarras()
                     +"\n"+"Precio: " + listaAlimentos.get(i).getPrecio()
                     +"\n"+ "Fecha de Caducidad: " + listaAlimentos.get(i).getDataCaducitat());
-            System.out.println("**********************************************");
+            System.out.println("***********************************************");
 
         }
     }
