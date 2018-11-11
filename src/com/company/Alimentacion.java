@@ -1,22 +1,46 @@
 package com.company;
 
-import java.security.MessageDigest;
-import java.time.Duration;
 import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
+
+import static java.time.Period.ofDays;
 
 public class Alimentacion extends Producto {
 
-    public static  Calendar fecha = Calendar.getInstance();
-    public static String dataCaducitat;
+    public static LocalDate dataCaducitat;
+    public static DateTimeFormatter fecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+
+    public static void setDataCaducitat(LocalDate dataCaducitat) {
+        Alimentacion.dataCaducitat = dataCaducitat;
+    }
+
+    public static LocalDate getDataCaducitat() {
+        return dataCaducitat;
+    }
+
+    public static long getPeriodo() {
+
+        long p2= ChronoUnit.DAYS.between(LocalDate.now(),getDataCaducitat());
+
+        return p2;
+    }
+
+
+
+
 
 
     public static void addProductAlimencion(List<Electronica>listaElectronicos,List<Alimentacion>listaAlimentos,List<Textil>listaTextil){
 
         Scanner scanner = new Scanner(System.in);
-
         Alimentacion alimento = new Alimentacion();
-
+        int dias=0;
+        int meses=0;
+        int anyos=0;
         int opcion = 1;
         while (opcion == 1){
 
@@ -41,14 +65,15 @@ public class Alimentacion extends Producto {
                 alimento.setPrecio(alimento.precio);
 
                 System.out.println("Introduzca fecha de Caducidad: ");
-                alimento.dataCaducitat =scanner.nextLine();
-                alimento.setDataCaducitat(alimento.dataCaducitat);
 
+                try {
 
-
-
-
-                listaAlimentos.add(alimento);
+                    alimento.dataCaducitat = LocalDate.parse(scanner.nextLine());
+                    alimento.setDataCaducitat(dataCaducitat);
+                    listaAlimentos.add(alimento);
+                }catch(Exception DatetimeParseException){
+                    System.out.println("FORMATO DE FECHA INCORRECTO DEBE SER AÑO-MES-DíAS");
+                }
 
             }else{
 
@@ -67,7 +92,7 @@ public class Alimentacion extends Producto {
                 AlimentoNew.setPrecio(AlimentoNew.precio);
 
                 System.out.println("Introduzca fecha de Caducidad: ");
-                AlimentoNew.dataCaducitat =scanner.nextLine();
+                AlimentoNew.dataCaducitat =LocalDate.parse(scanner.nextLine());
                 AlimentoNew.setDataCaducitat(AlimentoNew.dataCaducitat);
 
                listaAlimentos.add(AlimentoNew);
@@ -79,7 +104,6 @@ public class Alimentacion extends Producto {
         //
 
         imprimirListaAlimentos(listaAlimentos);
-
 
         getLista_Alimentos(listaAlimentos);
 
@@ -111,20 +135,11 @@ public class Alimentacion extends Producto {
         }
 
 
-    public String getDataCaducitat() {
-        return dataCaducitat;
-    }
-
-    public void setDataCaducitat(String dataCaducitat) {
-        this.dataCaducitat = dataCaducitat;
-    }
-
     public static void pruebahora(){
 
-        fecha.set(2001,0,1);
-        LocalDate fechaahora = LocalDate.now();
+        System.out.println(getPeriodo());
 
-        System.out.println(fechaahora);
+
 
     }
 }
