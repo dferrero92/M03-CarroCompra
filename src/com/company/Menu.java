@@ -21,7 +21,7 @@ static final String SUPERMERCAT_NAME="MERCALOMOS";
 
             case 1:Producto.añdirProducto();
                 break;
-            case 2:
+            case 2:Producto.añdirProducto();
                 break;
         }
 
