@@ -1,5 +1,6 @@
 package com.company;
 
+import java.security.MessageDigest;
 import java.util.*;
 
 public class Alimentacion extends Producto {
@@ -14,16 +15,12 @@ public class Alimentacion extends Producto {
 
 
 
-
-
-
-    public static void addProductAlimencion(){
+    public static void addProductAlimencion(List<Electronica>listaElectronicos,List<Alimentacion>listaAlimentos,List<Textil>listaTextil){
 
 
 
         Scanner scanner = new Scanner(System.in);
 
-        List<Alimentacion> listaAlimentos = new ArrayList<Alimentacion>();
         Alimentacion alimento = new Alimentacion();
 
         int opcion = 1;
@@ -90,17 +87,17 @@ public class Alimentacion extends Producto {
         imprimirListaAlimentos(listaAlimentos);
 
 
-
         getLista_Alimentos(listaAlimentos);
+
+        Menu.menuPrincipal(listaElectronicos,listaAlimentos,listaTextil);
 
     }
 
-
       // Método Para tener la lista de Alimentos Pasada y poder usarla en otros  metodos. (creo xD)
 
-    public static List<Alimentacion> getLista_Alimentos(List<Alimentacion> AlimentosLista){
+    public static List<Alimentacion> getLista_Alimentos(List<Alimentacion> listaAlimentos){
 
-        return  AlimentosLista;
+        return  listaAlimentos;
     }
 
     public static void imprimirListaAlimentos(List<Alimentacion> listaAlimentos){
@@ -115,11 +112,8 @@ public class Alimentacion extends Producto {
             System.out.println("***********************************************");
 
         }
+
     }
-
-
-
-
 
 
 

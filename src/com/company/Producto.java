@@ -36,7 +36,7 @@ public class Producto {
         this.nombre = nombre;
     }
 
-    public static void añdirProducto(){
+    public static void añdirProducto(List<Electronica>listaElectronicos,List<Alimentacion>listaAlimentos,List<Textil>listaTextil){
         Scanner sc = new Scanner(System.in);
 
         ArrayList<Alimentacion>listProducts=new ArrayList<>();
@@ -47,25 +47,20 @@ public class Producto {
         op=sc.nextInt();
 
         switch (op){
-            case 1 : Alimentacion.addProductAlimencion();
+            case 1 : Alimentacion.addProductAlimencion(listaElectronicos,listaAlimentos,listaTextil);
                 break;
-            case 2 : Electronica.addProductElectronica();
+            case 2 : Electronica.addProductElectronica(listaElectronicos,listaAlimentos,listaTextil);
                 break;
-            case 3 : Textil.addProdutTextil();
+            case 3 : Textil.addProdutTextil(listaElectronicos,listaAlimentos,listaTextil);
                 break;
-            case 4 : Menu.menuPrincipal();
+            case 4 : Menu.menuPrincipal(listaElectronicos,listaAlimentos,listaTextil);
                 break;
         }
 
 
 
 
-
-
-
     }
-
-
 
 
 

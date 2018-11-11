@@ -1,12 +1,13 @@
 package com.company;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
 
 static final String SUPERMERCAT_NAME="MERCALOMOS";
 
-    public static void menuPrincipal() {
+    public static void menuPrincipal(List<Electronica> listaElectronicos, List<Alimentacion>listaAlimentos, List<Textil>listaTextil) {
         Scanner sc = new Scanner(System.in);
         int opcio=0;
 
@@ -19,9 +20,9 @@ static final String SUPERMERCAT_NAME="MERCALOMOS";
 
         switch(opcio){
 
-            case 1:Producto.añdirProducto();
+            case 1:Producto.añdirProducto(listaElectronicos,listaAlimentos,listaTextil);
                 break;
-            case 2:Producto.añdirProducto();
+            case 2:Carrito.mostrarCarro(listaElectronicos,listaAlimentos,listaTextil);
                 break;
         }
 
