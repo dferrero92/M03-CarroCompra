@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Producto {
@@ -10,17 +11,6 @@ public class Producto {
     String nombre;
 
 
-
- /*    Producto producto = new Producto();
-    ArrayList<Alimentacion>listProductosAlimentacion= new ArrayList<>();
-
-    public void setProducto(Producto producto) {
-        this.producto = producto;
-    }
-
-    public Producto getProducto() {
-        return producto;
-    } */
 
     public int getCodigoBarras() {
         return codigoBarras;
@@ -73,10 +63,11 @@ public class Producto {
 
 
 
+    }
 
 
 
 
 
     }
-}
+

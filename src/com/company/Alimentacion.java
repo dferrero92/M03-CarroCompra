@@ -12,6 +12,11 @@ public class Alimentacion extends Producto {
     final int MES = fecha.get(Calendar.MONTH+1);
     final int DIA = fecha.get(Calendar.DAY_OF_MONTH);
 
+
+
+
+
+
     public static void addProductAlimencion(){
 
 
@@ -80,8 +85,28 @@ public class Alimentacion extends Producto {
 
         }
 
+        //
+
+        imprimirListaAlimentos(listaAlimentos);
+
+
+
+        getLista_Alimentos(listaAlimentos);
+
+    }
+
+
+      // Método Para tener la lista de Alimentos Pasada y poder usarla en otros metodos. (creo xD)
+
+    public static List<Alimentacion> getLista_Alimentos(List<Alimentacion> AlimentosLista){
+
+        return  AlimentosLista;
+    }
+
+    public static void imprimirListaAlimentos(List<Alimentacion> listaAlimentos){
+
         System.out.println("Lista Actual de Alimentos: ");
-        System.out.println("*****************************************");
+        System.out.println("**********************************************");
         for (int i = 0; i < listaAlimentos.size() ; i++) {
             System.out.println( "Nombre: " + listaAlimentos.get(i).getNombre()
                     +"\n"+"Código de Barras: " + listaAlimentos.get(i).getCodigoBarras()
@@ -90,8 +115,12 @@ public class Alimentacion extends Producto {
             System.out.println("**********************************************");
 
         }
-
     }
+
+
+
+
+
 
 
     public String getDataCaducitat() {
